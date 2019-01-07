@@ -44,7 +44,7 @@ Resources:
     Type: AWS::ElastiCache::CacheCluster
     Properties:
       Engine: redis
-      CacheNodeType: cache.m4.large
+      CacheNodeType: cache.t2.micro
       NumCacheNodes: 1
       CacheSubnetGroupName: !Ref 'RedisSubnetGroup'
       VpcSecurityGroupIds:
@@ -62,8 +62,8 @@ Resources:
         - AttributeName: username
           KeyType: HASH
       ProvisionedThroughput:
-        ReadCapacityUnits: 10
-        WriteCapacityUnits: 10
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
 
   # Table for storing the messages
   MessagesTable:
@@ -81,8 +81,8 @@ Resources:
         - AttributeName: message
           KeyType: RANGE
       ProvisionedThroughput:
-        ReadCapacityUnits: 10
-        WriteCapacityUnits: 10
+        ReadCapacityUnits: 1
+        WriteCapacityUnits: 1
 
   # A role for the service so it can access the tables
   ChatServiceRole:
