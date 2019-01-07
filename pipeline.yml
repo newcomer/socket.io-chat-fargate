@@ -1,15 +1,19 @@
 Parameters:
   GitHubRepo:
     Type: String
+    Default: socket.io-chat-fargate
   GitHubBranch:
     Type: String
+    Default: 6-cicd
   GitHubToken:
     Type: String
     NoEcho: true
   GitHubUser:
     Type: String
+    Default: newcomer
   EnvironmentName:
     Type: String
+    Default: chatv5-prod
   CertificateArn:
     Type: String
     Description: ARN of the Amazon Certificate Manager SSL certificate to use for this app
